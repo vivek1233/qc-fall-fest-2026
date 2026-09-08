@@ -1,0 +1,80 @@
+/* Simple responsive styles for QC Fall Fest 2026 */
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#7c5cff;
+  --muted:#94a3b8;
+  --text:#e6eef8;
+  --gap:1.125rem;
+  --container:1100px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:var(--text);
+  background:linear-gradient(180deg,#071025 0%, #071b2a 60%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  font-size:16px;
+}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 1rem}
+
+.site-header{position:sticky;top:0;background:rgba(6,10,17,0.6);backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:40}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
+.brand{font-weight:700;color:var(--text);text-decoration:none;font-size:1.125rem}
+#nav-toggle{display:none;background:transparent;border:0;color:var(--text);font-size:1.25rem}
+.site-nav{display:flex;gap:1rem}
+.site-nav a{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:6px}
+.site-nav a:hover{color:var(--text);background:rgba(255,255,255,0.02)}
+
+.hero{padding:4rem 0;background:linear-gradient(135deg, rgba(124,92,255,0.08), rgba(0,0,0,0));}
+.hero-inner{text-align:center;padding:2rem 0}
+.hero h1{font-size:clamp(1.6rem,4vw,2.4rem);margin:.2rem 0}
+.lead{color:var(--muted);max-width:70ch;margin:0.5rem auto}
+.meta{color:var(--muted);margin:.5rem 0 1.25rem}
+
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;text-decoration:none;color:inherit;border:1px solid transparent;cursor:pointer}
+.btn.primary{background:var(--accent);color:#041123;font-weight:600}
+.btn.outline{background:transparent;border-color:rgba(255,255,255,0.06);color:var(--text)}
+
+.section{padding:2.25rem 0}
+.section h2{margin:0 0 0.75rem}
+.muted{color:var(--muted)}
+
+.highlights{display:flex;gap:1rem;flex-wrap:wrap;list-style:none;padding:0;margin:1rem 0 0}
+.highlights li{background:rgba(255,255,255,0.02);padding:.6rem .8rem;border-radius:8px;color:var(--muted)}
+
+.day-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.day-tab{background:rgba(255,255,255,0.02);border:0;padding:.6rem .8rem;border-radius:8px;color:var(--text);cursor:pointer}
+.day-tab .day-label{display:block;color:var(--muted);font-size:.8rem}
+.day-tab.active{background:linear-gradient(90deg,var(--accent),#58a6ff);color:#041123}
+
+.day-schedule{display:none;padding:1rem 0}
+.schedule-active{display:block}
+.events{list-style:none;padding:0;margin:0}
+.events li{padding:.6rem 0;border-bottom:1px dashed rgba(255,255,255,0.03);display:flex;gap:1rem;align-items:flex-start}
+.events time{font-weight:700;color:var(--accent);min-width:72px}
+
+.speakers-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.speaker-card{background:rgba(255,255,255,0.02);padding:1rem;border-radius:10px}
+.speaker-card .photo{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#2ed1ff);display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:.5rem;color:#041123}
+
+.register-form{display:grid;gap:.75rem;max-width:680px}
+.register-form label{display:flex;flex-direction:column;color:var(--muted);font-size:.95rem}
+.register-form input,.register-form select,.register-form textarea{margin-top:.35rem;padding:.5rem .6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+.form-actions{display:flex;gap:.6rem;margin-top:.4rem}
+
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:1rem 0;margin-top:2rem;background:transparent}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.footer-links a{color:var(--muted);text-decoration:none;margin-left:.5rem}
+
+/* Responsive */
+@media (max-width:800px){
+  .site-nav{display:none;flex-direction:column;background:rgba(6,10,17,0.92);position:absolute;right:1rem;top:60px;padding:1rem;border-radius:8px}
+  #nav-toggle{display:block}
+  .hero-inner{text-align:left}
+}
